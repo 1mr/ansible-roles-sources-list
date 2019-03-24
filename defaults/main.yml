@@ -1,0 +1,6 @@
+---
+sources_list:
+  uri:
+    archive: http://archive.debian.org/debian
+    main: http://deb.debian.org/debian
+    security: http://security.debian.org/

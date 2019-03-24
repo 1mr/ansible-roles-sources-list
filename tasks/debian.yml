@@ -1,0 +1,17 @@
+---
+- name: add sources list
+  template: >
+    src=sources.list.j2
+    dest=/etc/apt/sources.list
+  register: apt_sources_list
+
+- name: apt-get update
+  apt: >
+    update_cache=yes
+  when: apt_sources_list.changed
+
+- name: apt-get update
+  apt: >
+    update_cache=yes
+    cache_valid_time=3600
+  when: not apt_sources_list.changed

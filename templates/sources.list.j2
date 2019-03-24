@@ -1,0 +1,11 @@
+{% if ansible_distribution_release == 'squeeze' %}
+deb {{ sources_list.uri.archive }} {{ ansible_distribution_release }} main
+deb {{ sources_list.uri.archive }} {{ ansible_distribution_release }}-lts main
+{% else %}
+deb {{ sources_list.uri.main }} {{ ansible_distribution_release }} main contrib non-free
+deb-src {{ sources_list.uri.main }} {{ ansible_distribution_release }} main contrib non-free
+deb {{ sources_list.uri.main }} {{ ansible_distribution_release }}-updates main contrib non-free
+deb-src {{ sources_list.uri.main }} {{ ansible_distribution_release }}-updates main contrib non-free
+deb {{ sources_list.uri.security }} {{ ansible_distribution_release }}/updates main contrib non-free
+deb-src {{ sources_list.uri.security }} {{ ansible_distribution_release }}/updates main contrib non-free
+{% endif %}

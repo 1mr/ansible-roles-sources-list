@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  role_name: sources-list
+  author: Stas Stavnichuk
+  description: configure /etc/apt/sources.list file
+  license: BSD
+  min_ansible_version: 1.4
+  platforms:
+  - name: Debian
+    versions:
+    - jessie
+    - squeeze
+    - wheezy
+    - stretch
+galaxy_tags:
+  - system
+  - apt
